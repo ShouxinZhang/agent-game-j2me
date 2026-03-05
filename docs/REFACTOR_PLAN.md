@@ -1,4 +1,4 @@
-# agent-game-j2me 重构计划（面向无损迁移）
+# agent-game-j2me 重构计划（Godot 定案版）
 
 ## 1. 业务目标
 
@@ -24,22 +24,66 @@
 - 核心脚本语义一致：`换场景/对话/条件/加减道具/任务状态` 等执行结果一致。
 - 允许显示层微小差异（字体、抗锯齿、帧率），但不改变玩法结果。
 
-## 3. 技术路线
+## 3. 技术路线（已定：Godot）
 
-推荐路线：`核心逻辑层 + 表现层` 分离。
+已确认路线：`Godot 客户端 + 独立规则核心`。
 
 1. `game-core`（无 UI）
 - 负责规则执行、脚本解释、状态管理、存档、战斗结算。
 - 对外提供统一接口：`reset/step/get_state/load/save`。
 
-2. `game-client`（Godot 或现代 Java）
+2. `game-client-godot`
 - 负责地图渲染、动画、输入、UI、音频。
 - 不承载业务规则，仅消费 `game-core` 事件流和状态。
 
-3. `agent-bridge`
+3. `data-loader`
+- 负责解析 `work/unpacked/txt/*.txt` 并构建结构化模型。
+- 对 `scene/event/role/enemy/item/equip` 做统一加载与校验。
+
+4. `asset-pipeline`
+- 负责 `.map/.ani/.ps` 兼容读取或可逆转换。
+- 输出可复现的中间产物，避免不可逆资产污染。
+
+5. `agent-bridge`
 - 面向 RL：`reset()/step(action)`、观测封装、奖励计算与终止条件。
 
-## 4. 分阶段执行计划
+## 4. 原架构分析与重构映射
+
+以下映射基于当前仓库资源与脚本结构（`work/unpacked/txt/*`）整理。
+
+1. 场景与地图模块
+- 原模块：`scene.txt` + `map/`
+- 新模块：`data-loader/scene_loader` + `game-client-godot/world_renderer`
+
+2. 事件脚本模块
+- 原模块：`sceneXevent.txt`
+- 新模块：`game-core/event_vm`
+
+3. 角色/NPC 放置模块
+- 原模块：`sceneXrole.txt` + `role.txt`
+- 新模块：`data-loader/role_loader` + `game-client-godot/role_presenter`
+
+4. 对话模块
+- 原模块：`sceneXchat.txt`
+- 新模块：`game-core/dialogue_service` + `game-client-godot/dialogue_ui`
+
+5. 战斗模块
+- 原模块：`battlepos.txt` + `enemy.txt` + `levelup.txt`
+- 新模块：`game-core/battle_engine`
+
+6. 物品与装备模块
+- 原模块：`item.txt` + `equip.txt`
+- 新模块：`game-core/inventory_economy`
+
+7. 门/开关与跳转模块
+- 原模块：`door.txt`（及脚本跳转指令）
+- 新模块：`game-core/scene_state_machine`
+
+8. 运行工具模块
+- 原模块：`scripts/run.sh`、`scripts/unpack.sh`、`scripts/repack.sh`
+- 新模块：`modernization/tools`（导入、校验、构建、回归脚本）
+
+## 5. 分阶段执行计划
 
 ## Phase 0: 基线冻结（1 周）
 
@@ -68,6 +112,7 @@
 
 3. 通过标准
 - 以 `scene1event.txt`、`scene2event.txt` 为样本，主流程可跑通。
+- 建立 Godot 客户端最小联调接口（不要求完整 UI）。
 
 ## Phase 2: 战斗与成长系统迁移（2 周）
 
@@ -95,6 +140,17 @@
 3. 通过标准
 - 从开局到至少一个完整章节可稳定游玩。
 
+## Phase M1/M2/M3（工程里程碑）
+
+1. M1 数据可读
+- 目标：`scene1/scene2` 配置可被解析并回放关键事件。
+
+2. M2 规则可跑
+- 目标：事件、战斗、背包、成长形成无 UI 闭环。
+
+3. M3 Godot 可玩
+- 目标：Godot 前端完成首章可玩流程。
+
 ## Phase 4: 无损回归与发布（1 周）
 
 产出：业务可验收版本 + 风险清单。
@@ -108,19 +164,21 @@
 3. 通过标准
 - P0 清零，P1 可接受且有修复计划，P2 记录在案。
 
-## 5. 模块边界与目录建议
+## 6. 模块边界与目录建议
 
 建议新增独立模块，避免污染现有资产目录。
 
 1. `modernization/game-core/`
-2. `modernization/game-client/`
-3. `modernization/agent-bridge/`
-4. `modernization/tools/`
-5. `modernization/tests/`
+2. `modernization/game-client-godot/`
+3. `modernization/data-loader/`
+4. `modernization/asset-pipeline/`
+5. `modernization/agent-bridge/`
+6. `modernization/tools/`
+7. `modernization/tests/`
 
 说明：`work/unpacked/` 作为原始内容来源，不直接放新逻辑代码。
 
-## 6. 风险与应对
+## 7. 风险与应对
 
 1. 风险：旧脚本存在隐式语义，文档缺失。
 - 应对：先实现可观测日志，逐条对照执行轨迹。
@@ -131,20 +189,23 @@
 3. 风险：一次性全量重写导致工期失控。
 - 应对：按章节灰度迁移，阶段性可玩可验收。
 
-## 7. 验收 KPI（管理视角）
+4. 风险：Godot 场景脚本承载过多规则，后续 RL 接入困难。
+- 应对：业务规则仅在 `game-core`，Godot 只做表现与交互。
+
+## 8. 验收 KPI（管理视角）
 
 1. 主线剧情一致率 >= 95%。
 2. 关键战斗一致率 >= 95%。
 3. 每周至少交付一个“可玩的增量版本”。
 4. 迁移后新增功能开发效率相对旧版本提升 >= 30%。
 
-## 8. 下一步（立即可执行）
+## 9. 下一步（立即可执行）
 
-1. 确认前端引擎：Godot 或现代 Java（建议 Godot + 独立 core）。
+1. 固化 `scene1/scene2` 为首批兼容样本（包含事件回放脚本）。
 2. 先实现 `scene1/scene2` 兼容样板，建立第一条端到端流水线。
 3. 建立基线样例库，作为后续每次迭代的回归门禁。
 
-## 9. CI 门禁建议（当前仓库待补齐）
+## 10. CI 门禁建议（当前仓库待补齐）
 
 当前仓库未发现 `.github/workflows/` 下的自动检查流程。为保障重构质量，建议最小化引入以下门禁：
 
