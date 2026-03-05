@@ -1,0 +1,15 @@
+﻿
+roleId=33
+phaseAll:
+script:
+=0,对话,0,33.我峨嵋山，神韵灵秀，同时是佛、道两教的名山，从唐朝起始有习武之人，是江湖中的一大名望门派。
+scriptEnd
+phaseAllEnd
+end
+roleId=34
+phaseAll:
+script:
+=0,对话,0,33.峨嵋山风景优美，宛如仙境，所谓：大峨两山相对开，小峨迤逦中峨来，三峨秀色甲天下，何须涉海寻蓬莱。
+scriptEnd
+phaseAllEnd
+end

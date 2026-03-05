@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+Created-By: 1.6.0-b105 (Sun Microsystems Inc.)
+MIDlet-1: 倚天屠龙之君临天下,/icon.png,GameMIDlet
+MIDlet-Vendor: 上海乐游
+MIDlet-Version: 1.0
+MIDlet-Name: 倚天屠龙之君临天下
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Icon: /icon.png
+MicroEdition-Profile: MIDP-2.0
+
