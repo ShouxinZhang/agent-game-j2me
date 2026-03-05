@@ -1,0 +1,15 @@
+{
+  "include": [
+    "modernization",
+    ".agents/skills/modernization-ci-gate/scripts"
+  ],
+  "exclude": [
+    "**/__pycache__"
+  ],
+  "extraPaths": [
+    "modernization/data-loader/src",
+    "modernization/game-core/src"
+  ],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic"
+}
