@@ -1,0 +1,25 @@
+{
+  "window": {
+    "id": "0x800da1",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 3299,
+    "y": 439
+  },
+  "frames": [
+    "burst-00.png",
+    "burst-01.png",
+    "burst-02.png",
+    "burst-03.png",
+    "burst-04.png",
+    "burst-05.png",
+    "burst-06.png",
+    "burst-07.png",
+    "burst-08.png",
+    "burst-09.png"
+  ],
+  "interval_ms": 120
+}

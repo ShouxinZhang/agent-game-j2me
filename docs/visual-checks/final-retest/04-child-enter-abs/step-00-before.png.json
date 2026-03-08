@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-09T00:44:08.742480",
+  "display": ":1",
+  "window": {
+    "id": "0x5400007",
+    "title": "FreeJ2ME",
+    "wm_class": "org-recompile-freej2me-FreeJ2ME",
+    "wm_instance": "org-recompile-freej2me-FreeJ2ME",
+    "width": 240,
+    "height": 320,
+    "x": 14,
+    "y": 49
+  },
+  "image_path": "docs/visual-checks/final-retest/04-child-enter-abs/step-00-before.png"
+}

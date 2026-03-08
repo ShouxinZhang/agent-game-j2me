@@ -1,0 +1,26 @@
+{
+  "window": {
+    "id": "0x7a00007",
+    "title": "FreeJ2ME",
+    "wm_class": "org-recompile-freej2me-FreeJ2ME",
+    "wm_instance": "org-recompile-freej2me-FreeJ2ME",
+    "width": 240,
+    "height": 320,
+    "x": 14,
+    "y": 49
+  },
+  "keys": [
+    "5",
+    "5",
+    "5",
+    "5",
+    "5",
+    "5",
+    "5",
+    "5",
+    "5",
+    "5"
+  ],
+  "delay_ms": 50,
+  "wait_after": 0.2
+}

@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-09T00:24:58.796250",
+  "display": ":1",
+  "window": {
+    "id": "0x800da1",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 3299,
+    "y": 439
+  },
+  "image_path": "docs/visual-checks/fresh-burst-after-load/burst-09.png"
+}

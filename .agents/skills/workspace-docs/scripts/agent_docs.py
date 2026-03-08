@@ -155,7 +155,7 @@ def cmd_export(args):
                     f.write(f"- **Agent Notes**: {row['agent_notes']}\n")
                 f.write("\n")
 
-    print(f"Successfully exported documentation to {export_path}")
+    print(f"Successfully exported legacy markdown documentation to {export_path}")
 
 def main():
     init_db()
@@ -183,7 +183,7 @@ def main():
     subparsers.add_parser("prune-missing", help="Delete database entries whose paths no longer exist")
 
     # Export command
-    subparsers.add_parser("export", help="Export documentation to WORKSPACE_MAP.md")
+    subparsers.add_parser("export", help="Export legacy markdown documentation to WORKSPACE_MAP.md on explicit request")
 
     args = parser.parse_args()
 

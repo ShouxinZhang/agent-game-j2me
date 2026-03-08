@@ -1,14 +1,14 @@
 {
-  "captured_at": "2026-03-08T15:01:17.227132",
+  "captured_at": "2026-03-08T23:56:42.257624",
   "display": ":1",
   "window": {
-    "id": "0x800a33",
+    "id": "0x800c57",
     "title": "FreeJ2ME",
     "wm_class": "mutter-x11-frames",
     "wm_instance": "mutter-x11-frames",
     "width": 268,
     "height": 386,
-    "x": 2546,
+    "x": 2612,
     "y": 20
   },
   "image_path": "docs/visual-checks/title-right/step-01-after.png"

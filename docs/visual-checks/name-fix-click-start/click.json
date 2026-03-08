@@ -1,0 +1,17 @@
+{
+  "window": {
+    "id": "0x5400007",
+    "title": "FreeJ2ME",
+    "wm_class": "org-recompile-freej2me-FreeJ2ME",
+    "wm_instance": "org-recompile-freej2me-FreeJ2ME",
+    "width": 240,
+    "height": 320,
+    "x": 14,
+    "y": 49
+  },
+  "relative_x": 120,
+  "relative_y": 300,
+  "absolute_x": 134,
+  "absolute_y": 349,
+  "wait_after": 1.0
+}

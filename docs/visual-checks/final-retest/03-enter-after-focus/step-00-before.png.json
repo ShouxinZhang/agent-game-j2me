@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-09T00:43:38.782188",
+  "display": ":1",
+  "window": {
+    "id": "0x800fc2",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 3266,
+    "y": 482
+  },
+  "image_path": "docs/visual-checks/final-retest/03-enter-after-focus/step-00-before.png"
+}

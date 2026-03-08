@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-09T00:40:13.209306",
+  "display": ":1",
+  "window": {
+    "id": "0x800f88",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2546,
+    "y": 20
+  },
+  "image_path": "docs/visual-checks/focus-fix/name-screen-stable/burst-06.png"
+}

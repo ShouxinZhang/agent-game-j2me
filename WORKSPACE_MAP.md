@@ -34,13 +34,21 @@
 - **Description**: architecture-guard 检测引擎
 - **Agent Notes**: 执行模块化检查、冗余检查和报告导出
 
+## `.agents/skills/freej2me-build-gate/SKILL.md` (file)
+- **Description**: FreeJ2ME 本地构建门禁技能说明
+- **Agent Notes**: 新增技能，统一构建 tools/freej2me-src 并同步 tools/freej2me.jar。
+
+## `.agents/skills/freej2me-build-gate/scripts/freej2me_build_gate.py` (file)
+- **Description**: FreeJ2ME 本地构建门禁脚本
+- **Agent Notes**: 使用本地 JDK 21 直接编译与打包 AWT 版 freej2me.jar。
+
 ## `.agents/skills/freej2me-story-check` (directory)
 - **Description**: FreeJ2ME 剧情验证技能目录
 - **Agent Notes**: 用于推进标题后的流程并留存连续截图证据。
 
 ## `.agents/skills/freej2me-story-check/SKILL.md` (file)
-- **Description**: FreeJ2ME 剧情验证技能说明
-- **Agent Notes**: 定义 list/step/walkthrough 三类剧情验证入口。
+- **Description**: FreeJ2ME GUI 验证技能说明
+- **Agent Notes**: 已明确强制采用先抓图读图、再查键位、单步执行的 visual-first 流程。
 
 ## `.agents/skills/freej2me-story-check/scripts` (directory)
 - **Description**: FreeJ2ME 剧情验证脚本目录
@@ -51,8 +59,8 @@
 - **Agent Notes**: 通过 Java Robot 向 FreeJ2ME 窗口发送点击和按键。
 
 ## `.agents/skills/freej2me-story-check/scripts/freej2me_story_check.py` (file)
-- **Description**: FreeJ2ME 剧情推进脚本
-- **Agent Notes**: 可聚焦窗口、发送键位、执行 walkthrough 并输出证据目录。
+- **Description**: FreeJ2ME 可视化剧情验证脚本
+- **Agent Notes**: 已补绝对坐标解析、burst/click/type 子命令，用于 visual-first GUI 验证。
 
 ## `.agents/skills/java-quality-gate` (directory)
 - **Description**: Java 21 逆向门禁技能目录
@@ -100,11 +108,11 @@
 
 ## `.agents/skills/workspace-docs/SKILL.md` (file)
 - **Description**: workspace-docs 技能说明文件
-- **Agent Notes**: 内容已翻译为中文，保留英文关键词与命令示例。
+- **Agent Notes**: SQLite 文档库为唯一权威源；非用户明确要求时不导出 WORKSPACE_MAP.md。
 
 ## `.agents/skills/workspace-docs/scripts/agent_docs.py` (file)
 - **Description**: 工作区文档脚本
-- **Agent Notes**: 负责 set/get/scan/export/prune-missing，先清脏数据再导出模块图谱。
+- **Agent Notes**: export 命令仅保留为兼容型 Markdown 导出入口；默认工作流只维护 SQLite 文档库。
 
 ## `.agents/skills/x11-window-check` (directory)
 - **Description**: X11 可视化取证技能目录
@@ -122,9 +130,19 @@
 - **Description**: X11 窗口抓图脚本
 - **Agent Notes**: 列出窗口并输出 PNG+JSON 元数据，供 GUI 完成度自检。
 
+## `.gitattributes` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `.gitignore` (file)
+- **Description**: 仓库根忽略规则，过滤本地运行产物、工具下载与通用临时文件。
+- **Agent Notes**: 新增于 2026-03-08；保守策略，不忽略业务源码与文档目录。
+
 ## `AGENTS.md` (file)
 - **Description**: 仓库 Agent 约束
 - **Agent Notes**: 要求模块化、先审查后编码、先对齐方案、删除前备份，并强制使用指定技能。
+
+## `LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `README.md` (file)
 - **Description**: 仓库业务说明
@@ -134,6 +152,15 @@
 - **Description**: 工作区文档总览（由 workspace-docs 自动导出）
 - **Agent Notes**: 自动生成文件；修改数据库后执行 export 覆盖更新。
 
+## `config` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `config/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `config/倚天屠龙之君临天下/game.conf` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs` (directory)
 - **Description**: 过程证据与运营文档目录
 - **Agent Notes**: 本轮承载备份、可视化检查和后续执行记录。
@@ -141,6 +168,27 @@
 ## `docs/agent-logs` (directory)
 - **Description**: Agent 执行日志目录
 - **Agent Notes**: 保存每批实现的审计日志、索引和汇总导出。
+
+## `docs/agent-logs/2026-03-08` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/INDEX.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/log-0001-140139.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/log-0002-141029.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/log-0003-142109.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/log-0004-150027.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/agent-logs/2026-03-08/log-0005-153206.md` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `docs/agent-logs/AGENT_LOGBOOK.md` (file)
 - **Description**: Agent 日志总览
@@ -158,21 +206,162 @@
 - **Description**: 运行缓存备份目录
 - **Agent Notes**: 清理临时 __pycache__ 前先留档，满足删除前备份要求。
 
+## `docs/backups/runtime-cache/20260308-140038` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cache/20260308-140038/java-quality-gate-scripts-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cache/20260308-140038/reverse-java21-baseline-scripts-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cache/20260308-140038/workspace-docs-scripts-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cache/20260308-140038/x11-window-check-scripts-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/backups/runtime-cleanup` (directory)
 - **Description**: 运行态清理备份目录
 - **Agent Notes**: 保存删除前的 config/rms 和 __pycache__ 备份。
+
+## `docs/backups/runtime-cleanup/20260308-140923` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/config` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/config/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/config/倚天屠龙之君临天下/game.conf` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/java-quality-gate-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/reverse-java21-baseline-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-140923/x11-window-check-pycache` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002/config` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002/config/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002/config/倚天屠龙之君临天下/game.conf` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002/rms` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-141002/rms/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047/config` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047/config/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047/config/倚天屠龙之君临天下/game.conf` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047/rms` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-cleanup/20260308-142047/rms/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
 
 ## `docs/backups/runtime-experiments` (directory)
 - **Description**: 运行态存档实验备份目录。
 - **Agent Notes**: 每次修改 RMS 存档前先做快照，避免破坏唯一验证样本。
 
+## `docs/backups/runtime-experiments/20260308-145348` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-145348/yitiantulong1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-145500` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-145500/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-145500/倚天屠龙之君临天下/saveInfo` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-145500/倚天屠龙之君临天下/yitiantulong1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-152300-tail-only` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-152300-tail-only/current-before-tail-only` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-152900-struct-patch` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-152900-struct-patch/before-struct-patch` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-153500-pos-patch` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-153500-pos-patch/before-pos-patch` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe/run-pos-patch.log` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe/run-right-enter-enter.log` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe/run-right-enter.log` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe/run-struct-patch.log` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/runtime-experiments/20260308-title-probe/run-tail-only.log` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/backups/workspace-docs` (directory)
 - **Description**: 模块文档备份目录
 - **Agent Notes**: 保存 workspace_docs.db 和导出文档的时间分区备份。
 
+## `docs/backups/workspace-docs/20260308-135317` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/workspace-docs/20260308-135317/WORKSPACE_MAP.md.bak` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/backups/workspace-docs/20260308-135317/workspace_docs.db.bak` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/story-route-map` (directory)
 - **Description**: 剧情路线图导出目录。
 - **Agent Notes**: 保存 route-map.json、route-map.md 以及运行日志状态摘要。
+
+## `docs/story-route-map/route-map.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/story-route-map/route-map.md` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `docs/story-route-map/save-inspect.json` (file)
 - **Description**: 当前终局补丁档的机读存档检查结果。
@@ -182,6 +371,114 @@
 - **Description**: GUI 视觉检查目录
 - **Agent Notes**: 集中保存窗口截图和对应元数据。
 
+## `docs/visual-checks/20260308-135754` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/20260308-135754/capture.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/20260308-135754/capture.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/close-tip/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/continue-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/continue-seq/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/step1/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/title.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/end2-relaunch/title.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/enter-settings/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/visual-checks/freej2me-running.png` (file)
 - **Description**: FreeJ2ME 运行截图证据
 - **Agent Notes**: 证明模拟器已成功启动并显示游戏标题界面。
@@ -190,21 +487,1212 @@
 - **Description**: FreeJ2ME 运行截图元数据
 - **Agent Notes**: 记录抓图时间、显示器和窗口 ID，便于复验。
 
+## `docs/visual-checks/live-check` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current-save.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current-save.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current2.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current3.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current4.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current5.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current6.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current6.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current7.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current7.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/live-check/current8.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-5/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-q/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-right-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-key-w/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter-2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/load-slot-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-0/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-7/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-q2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-r/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-probe-w/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/menu-to-settings/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-menu/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/open-save-slots/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-1/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-3/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-4/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-5/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-6/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/progress-enter-7/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/save-slot1/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-ending-wait.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-ending-wait.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/scene30-trigger-left5/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/00-title.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/00-title.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/01-01-enter-start.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/01-01-enter-start.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/02-02-confirm.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/02-02-confirm.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/03-03-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/03-03-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/04-04-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/04-04-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/05-05-down-enter.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/05-05-down-enter.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/06-06-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/06-06-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/07-07-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/07-07-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/contact-sheet.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141255/walkthrough.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/visual-checks/story-check-20260308-141612` (directory)
 - **Description**: 标题后剧情推进证据目录
 - **Agent Notes**: 记录从标题进入主线前置流程的连续截图。
+
+## `docs/visual-checks/story-check-20260308-141612/00-title.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/00-title.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/01-01-enter-start.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/01-01-enter-start.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/02-02-confirm.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/02-02-confirm.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/03-03-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/03-03-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/04-04-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/04-04-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/05-05-down-enter.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/05-05-down-enter.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/06-06-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/06-06-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/07-07-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/07-07-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/contact-sheet.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-20260308-141612/walkthrough.json` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `docs/visual-checks/story-check-bruteforce` (directory)
 - **Description**: 剧情输入探测证据目录
 - **Agent Notes**: 记录确认界面的候选按键试探和画面差异结果。
 
+## `docs/visual-checks/story-check-bruteforce/E.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/E.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/visual-checks/story-check-bruteforce/ENTER.png` (file)
 - **Description**: 对白推进后截图
 - **Agent Notes**: 证明 ENTER 能继续推进剧情对白。
 
+## `docs/visual-checks/story-check-bruteforce/ENTER.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/Q.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/Q.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/R.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/R.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/W.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-bruteforce/W.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `docs/visual-checks/story-check-bruteforce/base.png` (file)
 - **Description**: 开场对白场景截图
 - **Agent Notes**: 证明已进入实际场景对白，而非停留在标题或配置界面。
+
+## `docs/visual-checks/story-check-bruteforce/base.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-client-canvas.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-client-canvas.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-1/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-3/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-continue-r1/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-current-after-log.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-current-after-log.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-current-scene.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-current-scene.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-default-click-1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-check-default-click-1.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/00-title.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/00-title.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/01-01-enter-start.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/01-01-enter-start.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/02-02-confirm.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/02-02-confirm.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/03-03-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/03-03-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/04-04-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/04-04-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/05-05-down-enter.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/05-05-down-enter.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/06-06-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/06-06-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/07-07-advance.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/07-07-advance.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-1/walkthrough.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/story-save-attempt-2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-clean-2-crop.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-clean-2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-clean-2.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-clean.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-clean.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-down/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-enter-check/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step-01-after-crop.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-left/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step-01-after-crop.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-fresh-right/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-left/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-menu-probe2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num2/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num4/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num6/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-num8/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-pos-patch-load/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-probe-right-enter/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-recheck.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-recheck.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-right/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-struct-patch-load/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-tail-only-load/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue/step-00-before.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue/step-00-before.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue/step-01-after.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue/step-01-after.png.json` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `docs/visual-checks/title-to-continue/step.json` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `pyrightconfig.json` (file)
 - **Description**: 历史 Python 类型检查配置
@@ -225,6 +1713,84 @@
 ## `reverse/java21-baseline/README.md` (file)
 - **Description**: 逆向基线模块说明
 - **Agent Notes**: 帮助管理者快速理解该模块的输入、输出和门禁入口。
+
+## `reverse/java21-baseline/backups` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/backups/20260308-140649` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/backups/20260308-140649/generated` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/backups/20260308-140649/generated/.gitkeep` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/GameMIDlet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/XConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/XMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/aj.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/ba.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/lcdui` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/lcdui/Display.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/lcdui/Displayable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/midlet` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/midlet/MIDlet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/microedition/midlet/MIDletStateChangeException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging/BinaryMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging/Message.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging/MessageConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging/MessageListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/build/classes/javax/wireless/messaging/TextMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `reverse/java21-baseline/inputs` (directory)
 - **Description**: 逆向输入目录
@@ -266,9 +1832,213 @@
 - **Description**: 反编译输出目录
 - **Agent Notes**: 只放工具生成的源码，不混入手工修复。
 
+## `reverse/java21-baseline/src/generated-all` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/GameMIDlet.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/XConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/XMessage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/a.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/aa.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ab.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ac.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ad.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ae.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/af.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ag.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ah.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ai.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/aj.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ak.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/al.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/am.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/an.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ao.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ap.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/aq.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ar.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/as.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/at.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/au.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/av.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/aw.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ax.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ay.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/az.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/b.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/ba.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bb.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bc.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bd.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/be.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bf.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bg.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bh.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/bi.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/c.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/d.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/e.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/f.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/g.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/h.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/i.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/j.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/k.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/l.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/m.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/n.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/o.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/p.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/q.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/r.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/s.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/t.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/u.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/v.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/w.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/x.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/y.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated-all/z.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `reverse/java21-baseline/src/generated/.gitkeep` (file)
 - **Description**: 反编译输出占位文件
 - **Agent Notes**: 保证 generated 空目录也能进入版本管理。
+
+## `reverse/java21-baseline/src/generated/GameMIDlet.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated/XConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `reverse/java21-baseline/src/generated/XMessage.java` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `reverse/java21-baseline/src/manual` (directory)
 - **Description**: 手工修复源码目录
@@ -358,6 +2128,21 @@
 - **Description**: 文本消息接口桩
 - **Agent Notes**: 保留文本载荷的最小读写接口。
 
+## `rms` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `rms/倚天屠龙之君临天下` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `rms/倚天屠龙之君临天下/saveInfo` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `rms/倚天屠龙之君临天下/yitiantulong1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `rms/倚天屠龙之君临天下/yitiantulongSms` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `scripts` (directory)
 - **Description**: 仓库脚本目录
 - **Agent Notes**: 封装运行、解包、重打包和环境准备，避免手工散命令。
@@ -390,6 +2175,2660 @@
 - **Description**: FreeJ2ME 源码目录
 - **Agent Notes**: 用于本地构建模拟器 jar，避免依赖外部 release 资产。
 
+## `tools/freej2me-src/.gitignore` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/KEYMAP.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/META-INF` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/META-INF/freej2me-build.version` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/README.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build.xml` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/ActionTable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/AffineTrans.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Effect3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Figure.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/FigureLayout.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Graphics3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Light.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Texture.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Util3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/mascotcapsule/micro3d/v3/Vector3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/m3d` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/m3d/M3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/m3d/M3DException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/m3d/Texture.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/sound` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/sound/Sound.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/sound/SoundListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/ui` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/ui/DeviceControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/ui/DirectGraphics.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/ui/DirectUtils.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/nokia/mid/ui/FullCanvas.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util/AudioClip.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util/LCDLight.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util/SM.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util/SMS.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/samsung/util/Vibration.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game/GameCanvas.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game/Layer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game/LayerManager.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game/Sprite.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/color_game/TiledLayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/ExtendedImage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/GraphicObject.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/GraphicObjectManager.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/Light.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/Melody.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/MelodyComposer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/Sound.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/Sprite.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/game/Vibrator.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/misc` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/com/siemens/mp/misc/NativeMem.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/BluetoothConnectionException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/BluetoothStateException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/DataElement.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/RemoteDevice.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/ServiceRecord.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/bluetooth/ServiceRegistrationException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/CommConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/Connection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/ConnectionNotFoundException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/Connector$fakeIS.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/Connector.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/ContentConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/Datagram.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/DatagramConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/HttpConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/HttpsConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/InputConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/OutputConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/PushRegistry.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/SecureConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/SecurityInfo.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/ServerSocketConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/SocketConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/StreamConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/StreamConnectionNotifier.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/io/UDPDatagramConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Alert$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Alert.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/AlertType.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Canvas.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Choice.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/ChoiceGroup.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Command.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/CommandListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/CustomItem.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/DateField.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Display$SerialCallTimerTask.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Display.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Displayable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Font.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Form.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Gauge.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Graphics.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Image.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/ImageItem.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Item.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/ItemCommandListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/ItemStateListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/List.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Screen.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Spacer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/StringItem.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/TextBox.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/TextField.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/Ticker.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game/GameCanvas.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game/Layer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game/LayerManager.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game/Sprite.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/lcdui/game/TiledLayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/AnimationController.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/AnimationTrack.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Appearance.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Background.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Camera.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/CompositingMode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Fog.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Graphics3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Group.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Image2D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/IndexBuffer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/KeyframeSequence.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Light.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Loader.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Material.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Mesh.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/MorphingMesh.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Node.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Object3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/PolygonMode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/RayIntersection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/SkinnedMesh.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Sprite3D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Texture2D.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Transform.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/Transformable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/TriangleStripArray.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/VertexArray.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/VertexBuffer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/m3g/World.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/Control.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/Controllable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/Manager.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/MediaException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/Player.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/PlayerListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/TimeBase.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/ToneControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/VolumeControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/FramePositioningControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/GUIControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/MIDIControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/MetaDataControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/PitchControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/RateControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/RecordControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/StopTimeControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/TempoControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/ToneControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/VideoControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/control/VolumeControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/protocol` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/protocol/ContentDescriptor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/protocol/DataSource.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/media/protocol/SourceStream.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/midlet` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/midlet/MIDlet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/midlet/MIDletStateChangeException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/Contact.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/ContactList.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/Event.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/EventList.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/FieldEmptyException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/FieldFullException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/PIM.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/PIMException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/PIMItem.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/PIMList.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/RepeatRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/ToDo.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/ToDoList.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pim/UnsupportedFieldException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pki` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pki/Certificate.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/pki/CertificateException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/InvalidRecordIDException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordComparator.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordEnumeration.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordFilter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStore$enumeration.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStore.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStoreException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStoreFullException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStoreNotFoundException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/rms/RecordStoreNotOpenException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/Channel.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/ChannelInfo.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/Condition.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/ConditionListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/Data.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/DataListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/MeasurementRange.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/SensorConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/SensorInfo.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/SensorListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/microedition/sensor/Unit.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/BinaryMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/Message.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/MessageConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/MessageListener.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/MessagePart.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/MultipartMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/SizeExceededException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/javax/wireless/messaging/TextMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/AnnotationVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/AnnotationWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Attribute.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/ByteVector.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/ClassAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/ClassReader.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/ClassVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/ClassWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Edge.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/FieldVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/FieldWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Frame.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Handler.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Item.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Label.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/MethodAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/MethodVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/MethodWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Opcodes.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/Type.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/AdviceAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/AnalyzerAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/CodeSizeEvaluator.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/EmptyVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/GeneratorAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/InstructionAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/JSRInlinerAdapter$Instantiation.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/JSRInlinerAdapter$Subroutine.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/JSRInlinerAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/LocalVariablesSorter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/Method.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/Remapper.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/RemappingAnnotationAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/RemappingClassAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/RemappingFieldAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/RemappingMethodAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/RemappingSignatureAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/SerialVersionUIDAdder$Item.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/SerialVersionUIDAdder.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/SimpleRemapper.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/StaticInitMerger.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/TableSwitchGenerator.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/TryCatchBlockSorter$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/commons/TryCatchBlockSorter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/signature` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/signature/SignatureReader.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/signature/SignatureVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/signature/SignatureWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/AbstractInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/AnnotationNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/ClassNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/FieldInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/FieldNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/FrameNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/IincInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/InnerClassNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/InsnList$InsnListIterator.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/InsnList.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/InsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/IntInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/JumpInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/LabelNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/LdcInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/LineNumberNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/LocalVariableNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/LookupSwitchInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/MemberNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/MethodInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/MethodNode$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/MethodNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/MultiANewArrayInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/TableSwitchInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/TryCatchBlockNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/TypeInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/VarInsnNode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/Analyzer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/AnalyzerException.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/BasicInterpreter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/BasicValue.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/BasicVerifier.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/Frame.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/Interpreter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/SimpleVerifier.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/SmallSet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/SourceInterpreter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/SourceValue.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/Subroutine.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/tree/analysis/Value.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifiable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifierAbstractVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifierAnnotationVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifierClassVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifierFieldVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/ASMifierMethodVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/AbstractVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckAnnotationAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckClassAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckFieldAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckMethodAdapter$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckMethodAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/CheckSignatureAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceAbstractVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceAnnotationVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceClassVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceFieldVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceMethodVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/TraceSignatureVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/util/Traceable.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationDefaultRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationParameterRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationValueAnnotationRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationValueArrayRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationValueEnumRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$AnnotationValueRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$ClassRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$ExceptionRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$ExceptionsRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$FieldRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$FrameRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$FrameTypeRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$InnerClassRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$InterfaceRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$InterfacesRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$LabelRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$LineNumberRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$LocalVarRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$LookupSwitchLabelRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$LookupSwitchRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$MaxRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$MethodRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$Opcode.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$OpcodeGroup.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$OpcodesRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$OuterClassRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$Rule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$RuleSet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$SourceRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$TableSwitchLabelRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$TableSwitchRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler$TryCatchRule.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/ASMContentHandler.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$ASMContentHandlerFactory.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$ContentHandlerFactory.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$EntryElement.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$InputSlicingHandler.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$OutputSlicingHandler.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$ProtectedInputStream.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$SAXWriter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$SAXWriterFactory.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$SingleDocElement.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$SubdocumentHandlerFactory.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$TransformerHandlerFactory.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor$ZipEntryElement.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/Processor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/SAXAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/SAXAnnotationAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/SAXClassAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/SAXCodeAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/objectweb/asm/xml/SAXFieldAdapter.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Anbu$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Anbu$SDL$SDLKeyTimerTask.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Anbu$SDL.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Anbu.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Config$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Config.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$2.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$3.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$4.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$5.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$6.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$7.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$8.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME$LCD.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/FreeJ2ME.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Libretro$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Libretro$2.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Libretro$LibretroIO$LibretroTimerTask.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Libretro$LibretroIO.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/Libretro.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/freej2me/ScreenShot.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MIDletLoader$ASMVisitor$ASMMethodVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MIDletLoader$ASMVisitor.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MIDletLoader$SiemensInputStream.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MIDletLoader.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/Mobile.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MobilePlatform$1.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/MobilePlatform.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformFont.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformGraphics.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformImage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$audioplayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$midiControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$midiPlayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$tempoControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$volumeControl.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer$wavPlayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/PlatformPlayer.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/classes/org/recompile/mobile/WavImaAdpcmDecoder.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/build/manifest-awt.mf` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/package` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/package/emulators.cfg` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/package/retroarch.cfg` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/package/retropie.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/resources` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/resources/org` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/resources/org/recompile` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/resources/org/recompile/icon.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/ActionTable.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/AffineTrans.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Effect3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Figure.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/FigureLayout.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Graphics3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Light.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Texture.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Util3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/mascotcapsule/micro3d/v3/Vector3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/m3d` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/m3d/M3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/m3d/M3DException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/m3d/Texture.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/sound` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/sound/Sound.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/sound/SoundListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/ui` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/ui/DeviceControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/ui/DirectGraphics.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/ui/DirectUtils.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/nokia/mid/ui/FullCanvas.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util/AudioClip.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util/LCDLight.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util/SM.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util/SMS.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/samsung/util/Vibration.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game/GameCanvas.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game/Layer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game/LayerManager.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game/Sprite.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/color_game/TiledLayer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/ExtendedImage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/GraphicObject.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/GraphicObjectManager.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/Light.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/Melody.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/MelodyComposer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/Sound.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/Sprite.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/game/Vibrator.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/misc` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/com/siemens/mp/misc/NativeMem.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/BluetoothConnectionException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/BluetoothStateException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/DataElement.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/RemoteDevice.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/ServiceRecord.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/bluetooth/ServiceRegistrationException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/CommConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/Connection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/ConnectionNotFoundException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/Connector.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/ContentConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/Datagram.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/DatagramConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/HttpConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/HttpsConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/InputConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/OutputConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/PushRegistry.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/SecureConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/SecurityInfo.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/ServerSocketConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/SocketConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/StreamConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/StreamConnectionNotifier.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/io/UDPDatagramConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Alert.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/AlertType.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Canvas.java` (file)
+- **Description**: J2ME Canvas 基础实现
+- **Agent Notes**: 已限制 serviceRepaints 仅刷新当前页面，避免旧 Canvas 覆盖新表单。
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Choice.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/ChoiceGroup.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Command.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/CommandListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/CustomItem.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/DateField.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Display.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Displayable.java` (file)
+- **Description**: J2ME Displayable 基础渲染
+- **Agent Notes**: 已补 TextField 的基础渲染与 keyTyped 入口。
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Font.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Form.java` (file)
+- **Description**: J2ME Form 基础实现
+- **Agent Notes**: 已补 TextField 当前项的字符输入处理与状态刷新。
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Gauge.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Graphics.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Image.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/ImageItem.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Item.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/ItemCommandListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/ItemStateListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/List.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Screen.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Spacer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/StringItem.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/TextBox.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/TextField.java` (file)
+- **Description**: J2ME TextField 基础实现
+- **Agent Notes**: 已补 append/deleteLast 和空值保护，用于桌面输入验证。
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/Ticker.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game/GameCanvas.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game/Layer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game/LayerManager.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game/Sprite.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/lcdui/game/TiledLayer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/AnimationController.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/AnimationTrack.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Appearance.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Background.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Camera.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/CompositingMode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Fog.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Graphics3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Group.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Image2D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/IndexBuffer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/KeyframeSequence.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Light.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Loader.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Material.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Mesh.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/MorphingMesh.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Node.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Object3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/PolygonMode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/RayIntersection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/SkinnedMesh.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Sprite3D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Texture2D.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Transform.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/Transformable.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/TriangleStripArray.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/VertexArray.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/VertexBuffer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/m3g/World.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/Control.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/Controllable.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/Manager.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/MediaException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/Player.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/PlayerListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/TimeBase.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/ToneControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/VolumeControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/FramePositioningControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/GUIControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/MIDIControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/MetaDataControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/PitchControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/RateControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/RecordControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/StopTimeControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/TempoControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/ToneControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/VideoControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/control/VolumeControl.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/protocol` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/protocol/ContentDescriptor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/protocol/DataSource.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/media/protocol/SourceStream.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/midlet` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/midlet/MIDlet.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/midlet/MIDletStateChangeException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/Contact.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/ContactList.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/Event.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/EventList.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/FieldEmptyException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/FieldFullException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/PIM.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/PIMException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/PIMItem.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/PIMList.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/RepeatRule.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/ToDo.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/ToDoList.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pim/UnsupportedFieldException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pki` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pki/Certificate.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/pki/CertificateException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/InvalidRecordIDException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordComparator.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordEnumeration.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordFilter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordStore.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordStoreException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordStoreFullException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordStoreNotFoundException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/rms/RecordStoreNotOpenException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/Channel.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/ChannelInfo.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/Condition.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/ConditionListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/Data.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/DataListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/MeasurementRange.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/SensorConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/SensorInfo.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/SensorListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/microedition/sensor/Unit.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/BinaryMessage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/Message.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/MessageConnection.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/MessageListener.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/MessagePart.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/MultipartMessage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/SizeExceededException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/javax/wireless/messaging/TextMessage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/Makefile` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/Makefile.common` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_fnmatch.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_getopt.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_ifaddrs.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_posix_string.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_snprintf.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_strcasestr.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/compat/compat_strl.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/file` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/file/file_path.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/boolean.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/apple_compat.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/fnmatch.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/getopt.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/ifaddrs.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/intrinsics.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/msvc` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/msvc.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/msvc/stdint.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/posix_string.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/strcasestr.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/strl.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/zconf.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/zconf.h.in` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/zlib.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/compat/zutil.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/file` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/file/file_path.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/retro_common_api.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/deps/libretro-common/include/retro_miscellaneous.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/emulators.cfg` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/freej2me_libretro.c` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/freej2me_libretro.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/libretro.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/link.T` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/retroarch.cfg` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/libretro/retropie.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/AnnotationVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/AnnotationWriter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Attribute.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/ByteVector.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/ClassAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/ClassReader.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/ClassVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/ClassWriter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Edge.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/FieldVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/FieldWriter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Frame.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Handler.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Item.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Label.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/MethodAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/MethodVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/MethodWriter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Opcodes.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/Type.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/attrs` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/attrs/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/AdviceAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/AnalyzerAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/CodeSizeEvaluator.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/EmptyVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/GeneratorAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/InstructionAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/JSRInlinerAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/LocalVariablesSorter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/Method.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/Remapper.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/RemappingAnnotationAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/RemappingClassAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/RemappingFieldAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/RemappingMethodAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/RemappingSignatureAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/SerialVersionUIDAdder.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/SimpleRemapper.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/StaticInitMerger.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/TableSwitchGenerator.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/TryCatchBlockSorter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/commons/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/signature` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/signature/SignatureReader.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/signature/SignatureVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/signature/SignatureWriter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/signature/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/AbstractInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/AnnotationNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/ClassNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/FieldInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/FieldNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/FrameNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/IincInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/InnerClassNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/InsnList.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/InsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/IntInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/JumpInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/LabelNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/LdcInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/LineNumberNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/LocalVariableNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/LookupSwitchInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/MemberNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/MethodInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/MethodNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/MultiANewArrayInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/TableSwitchInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/TryCatchBlockNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/TypeInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/VarInsnNode.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/Analyzer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/AnalyzerException.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/BasicInterpreter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/BasicValue.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/BasicVerifier.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/Frame.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/Interpreter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/SimpleVerifier.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/SmallSet.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/SourceInterpreter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/SourceValue.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/Subroutine.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/Value.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/analysis/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/tree/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifiable.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifierAbstractVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifierAnnotationVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifierClassVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifierFieldVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/ASMifierMethodVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/AbstractVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/CheckAnnotationAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/CheckClassAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/CheckFieldAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/CheckMethodAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/CheckSignatureAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceAbstractVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceAnnotationVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceClassVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceFieldVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceMethodVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/TraceSignatureVisitor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/Traceable.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/util/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/ASMContentHandler.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/Processor.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/SAXAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/SAXAnnotationAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/SAXClassAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/SAXCodeAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/SAXFieldAdapter.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/asm-xml.dtd` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/objectweb/asm/xml/package.html` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/freej2me` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/freej2me/Anbu.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/freej2me/Config.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/freej2me/FreeJ2ME.java` (file)
+- **Description**: FreeJ2ME AWT 主窗口与输入桥接
+- **Agent Notes**: 已补窗口激活抢焦点，以及 Form/TextBox 文本界面的字符输入优先路由。
+
+## `tools/freej2me-src/src/org/recompile/freej2me/Libretro.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/freej2me/ScreenShot.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/MIDletLoader.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/Mobile.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/MobilePlatform.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/PlatformFont.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/PlatformGraphics.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/PlatformImage.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/PlatformPlayer.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/org/recompile/mobile/WavImaAdpcmDecoder.java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/sdl2` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/sdl2/Makefile` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/freej2me-src/src/sdl2/anbu.cpp` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `tools/freej2me.jar` (file)
 - **Description**: 本地构建的 FreeJ2ME 模拟器
 - **Agent Notes**: 已可启动本游戏并用于 GUI 取证验证。
@@ -397,6 +4836,1626 @@
 ## `tools/jdk-21` (directory)
 - **Description**: 本地 JDK 21 工具链
 - **Agent Notes**: 为无 root 环境提供 javac、jar 和 java，支撑门禁与模拟器构建。
+
+## `tools/jdk-21/NOTICE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jar` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jarsigner` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/java` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/javac` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/javadoc` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/javap` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jcmd` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jconsole` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jdb` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jdeprscan` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jdeps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jfr` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jhsdb` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jimage` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jinfo` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jlink` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jmap` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jpackage` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jrunscript` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jshell` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jstack` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jstat` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jstatd` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/jwebserver` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/keytool` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/rmiregistry` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/bin/serialver` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/jaxp.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/logging.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/management` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/management/jmxremote.access` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/management/jmxremote.password.template` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/management/management.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/net.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/sdp` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/sdp/sdp.conf.template` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/java.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/java.security` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/README.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/limited` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/limited/default_US_export.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/limited/default_local.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/limited/exempt_local.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/unlimited` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/unlimited/default_US_export.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/security/policy/unlimited/default_local.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/conf/sound.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/classfile_constants.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/jawt.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/jdwpTransport.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/jni.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/jvmti.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/jvmticmlr.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/linux` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/linux/jawt_md.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/include/linux/jni_md.h` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.base.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.compiler.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.datatransfer.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.desktop.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.instrument.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.logging.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.management.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.management.rmi.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.naming.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.net.http.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.prefs.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.rmi.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.scripting.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.se.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.security.jgss.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.security.sasl.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.smartcardio.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.sql.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.sql.rowset.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.transaction.xa.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.xml.crypto.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/java.xml.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.accessibility.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.attach.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.charsets.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.compiler.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.crypto.cryptoki.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.crypto.ec.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.dynalink.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.editpad.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.hotspot.agent.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.httpserver.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.incubator.vector.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.ed.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.jvmstat.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.le.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.opt.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.vm.ci.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.vm.compiler.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.internal.vm.compiler.management.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jartool.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.javadoc.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jcmd.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jconsole.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jdeps.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jdi.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jdwp.agent.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jfr.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jlink.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jpackage.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jshell.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jsobject.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.jstatd.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.localedata.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.management.agent.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.management.jfr.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.management.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.naming.dns.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.naming.rmi.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.net.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.nio.mapmode.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.random.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.sctp.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.security.auth.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.security.jgss.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.unsupported.desktop.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.unsupported.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.xml.dom.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/jmods/jdk.zipfs.jmod` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/aes.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/asm.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/c-libutl.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/cldr.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/icu.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/public_suffix.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/siphash.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/unicode.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.base/zlib.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.compiler` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.compiler/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.compiler/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.compiler/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.datatransfer` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.datatransfer/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.datatransfer/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/colorimaging.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/freetype.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/giflib.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/harfbuzz.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/jpeg.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/lcms.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/libpng.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/mesa3d.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/pipewire.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.desktop/xwd.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.instrument` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.instrument/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.instrument/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.instrument/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.logging` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.logging/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.logging/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.logging/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management.rmi` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management.rmi/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management.rmi/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.management/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.naming` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.naming/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.naming/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.naming/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.net.http` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.net.http/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.net.http/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.net.http/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.prefs` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.prefs/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.prefs/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.prefs/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.rmi` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.rmi/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.rmi/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.rmi/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.scripting` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.scripting/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.scripting/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.scripting/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.se` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.se/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.se/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.se/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.jgss` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.jgss/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.jgss/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.sasl` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.sasl/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.security.sasl/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.smartcardio` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.smartcardio/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.smartcardio/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.smartcardio/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.smartcardio/pcsclite.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql.rowset` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql.rowset/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql.rowset/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.sql/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.transaction.xa` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.transaction.xa/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.transaction.xa/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml.crypto` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml.crypto/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml.crypto/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml.crypto/santuario.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/bcel.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/dom.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/jcup.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/xalan.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/java.xml/xerces.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.accessibility` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.accessibility/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.accessibility/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.accessibility/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.attach` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.attach/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.attach/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.attach/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.charsets` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.charsets/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.charsets/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.charsets/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.compiler` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.compiler/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.compiler/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.compiler/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki/pkcs11cryptotoken.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.cryptoki/pkcs11wrapper.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.ec` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.ec/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.ec/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.crypto.ec/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.dynalink` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.dynalink/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.dynalink/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.dynalink/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.dynalink/dynalink.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.editpad` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.editpad/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.editpad/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.editpad/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.hotspot.agent` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.hotspot.agent/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.hotspot.agent/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.hotspot.agent/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.httpserver` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.httpserver/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.httpserver/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.httpserver/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.incubator.vector` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.incubator.vector/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.incubator.vector/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.incubator.vector/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.ed` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.ed/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.ed/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.ed/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.jvmstat` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.jvmstat/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.jvmstat/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.jvmstat/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.le` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.le/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.le/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.le/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.le/jline.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.opt` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.opt/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.opt/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.opt/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.opt/jopt-simple.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.ci` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.ci/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.ci/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.ci/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler.management` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler.management/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler.management/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler.management/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.internal.vm.compiler/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jartool` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jartool/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jartool/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jartool/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc/jquery.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.javadoc/jqueryUI.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jcmd` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jcmd/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jcmd/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jcmd/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jconsole` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jconsole/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jconsole/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jconsole/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdeps` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdeps/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdeps/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdeps/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdi` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdi/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdi/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdi/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdwp.agent` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdwp.agent/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jdwp.agent/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jfr` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jfr/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jfr/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jfr/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jlink` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jlink/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jlink/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jlink/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jpackage` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jpackage/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jpackage/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jpackage/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jshell` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jshell/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jshell/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jshell/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jsobject` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jsobject/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jsobject/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jsobject/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jstatd` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jstatd/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jstatd/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.jstatd/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata/cldr.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.localedata/thaidict.md` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.agent` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.agent/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.agent/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.agent/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.jfr` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.jfr/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.jfr/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management.jfr/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.management/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.dns` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.dns/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.dns/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.dns/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.rmi` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.rmi/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.rmi/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.naming.rmi/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.net` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.net/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.net/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.net/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.nio.mapmode` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.nio.mapmode/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.nio.mapmode/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.nio.mapmode/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.random` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.random/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.random/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.random/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.sctp` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.sctp/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.sctp/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.sctp/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.auth` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.auth/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.auth/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.auth/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.jgss` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.jgss/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.jgss/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.security.jgss/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported.desktop` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported.desktop/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported.desktop/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported.desktop/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.unsupported/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.xml.dom` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.xml.dom/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.xml.dom/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.xml.dom/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.zipfs` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.zipfs/ASSEMBLY_EXCEPTION` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/legal/jdk.zipfs/LICENSE` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/classlist` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/ct.sym` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jexec` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jfr` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jfr/default.jfc` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jfr/profile.jfc` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jrt-fs.jar` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jspawnhelper` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/jvm.cfg` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libattach.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libawt.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libawt_headless.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libawt_xawt.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libdt_socket.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libextnet.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libfontmanager.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libfreetype.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libinstrument.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libj2gss.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libj2pcsc.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libj2pkcs11.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjaas.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjava.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjavajpeg.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjawt.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjdwp.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjimage.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjli.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjsig.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjsound.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libjsvml.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/liblcms.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/lible.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libmanagement.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libmanagement_agent.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libmanagement_ext.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libmlib_image.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libnet.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libnio.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libprefs.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/librmi.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libsaproc.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libsctp.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libsplashscreen.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libsyslookup.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libverify.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/libzip.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/modules` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/psfont.properties.ja` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/psfontj2d.properties` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/security` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/security/blocked.certs` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/security/cacerts` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/security/default.policy` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/security/public_suffix_list.dat` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/server` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/server/classes.jsa` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/server/classes_nocoops.jsa` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/server/libjsig.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/server/libjvm.so` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/src.zip` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/lib/tzdb.dat` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jar.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jarsigner.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/java.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/javac.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/javadoc.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/javap.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jcmd.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jconsole.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jdb.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jdeprscan.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jdeps.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jfr.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jhsdb.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jinfo.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jlink.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jmap.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jmod.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jpackage.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jps.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jrunscript.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jshell.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jstack.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jstat.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jstatd.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/jwebserver.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/keytool.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/rmiregistry.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/man/man1/serialver.1` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `tools/jdk-21/release` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `tools/jdk-download` (directory)
 - **Description**: JDK 下载归档目录
@@ -418,65 +6477,2066 @@
 - **Description**: 原始解包基线目录
 - **Agent Notes**: 当前游戏包的事实输入，不直接承载逆向源码。
 
+## `work/unpacked/GameMIDlet.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/META-INF` (directory)
 - **Description**: JAR 元信息模块
 - **Agent Notes**: 保存 Manifest 和包级元数据，是运行入口事实来源。
+
+## `work/unpacked/META-INF/MANIFEST.MF` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/XConnection.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/XMessage.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/a.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/aa.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ab.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ac.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ad.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ae.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/af.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ag.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ah.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ai.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/aj.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ak.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/al.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/am.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/an.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ao.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ap.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/aq.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ar.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/as.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/at.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/au.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/av.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/aw.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ax.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ay.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/az.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/b.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/ba.class` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/battle` (directory)
 - **Description**: 战斗界面资源模块
 - **Agent Notes**: 承载战斗 UI 和相关素材。
 
+## `work/unpacked/battle/bottom.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/finger.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/left.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/menuBack.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/menuWords.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/menufont.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/baixiong.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/ck.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d10.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d11.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d7.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/d9.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/em.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/haidao.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/hufa.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/jnsy.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/lang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/laohu.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/luohan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/md.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/toumu.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/wd.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/wyx.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/xiezi.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/yx.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/monster/zhou.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/nanzhujiao.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/piaodai.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/role1.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/role2.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/role3.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/texiao.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/xiaozhaoqi.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/yingzi2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/role/zhouzhiruo.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battle/top.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/battlemap` (directory)
 - **Description**: 战斗地图资源模块
 - **Agent Notes**: 承载战斗地形和战斗场景贴图。
+
+## `work/unpacked/battlemap/dong.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/fang.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/hai.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/jiaban-dizhuan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/jiaban.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/jiaban2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/jiaban3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/lv.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shandong-dizhuan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shandong.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shinei-dizhuang-2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shinei-dizhuang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shinei.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shulin-dizhuan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/shulin.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/xue.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/xueshan-dizhuan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/battlemap/xueshan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bb.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bc.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bd.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/be.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bf.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bg.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bh.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/bi.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/c.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/d.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/e.class` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/equipIcon` (directory)
 - **Description**: 装备图标模块
 - **Agent Notes**: 承载装备业务的图标素材。
 
+## `work/unpacked/equipIcon/jian_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/jian_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/jian_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/jiezhi_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/jiezhi_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/jiezhi_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/maozi_6.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/quantao_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/quantao_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/quantao_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/shouzhuo_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/shouzhuo_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/shouzhuo_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/tulongdao.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xianglian_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xianglian_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xianglian_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xiezai.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xiezi_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xiezi_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/xiezi_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yaozhui_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yaozhui_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yaozhui_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yifu_6.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/yitianjian.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/zhuazi_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/zhuazi_2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/equipIcon/zhuazi_3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/f.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/face` (directory)
 - **Description**: 头像资源模块
 - **Agent Notes**: 承载角色头像等小尺寸人物表现素材。
+
+## `work/unpacked/face/1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/face/2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/face/3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/g.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/h.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/i.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/icon.png` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/itemIcon` (directory)
 - **Description**: 物品图标模块
 - **Agent Notes**: 承载消耗品和道具图标素材。
 
+## `work/unpacked/itemIcon/k1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/k2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/k3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/k4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/longxucao.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/p1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/p2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/p3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y7.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/y9.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z6.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z7.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/itemIcon/z9.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/j.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/k.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/l.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/m.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/map` (directory)
 - **Description**: 大地图与室内地图模块
 - **Agent Notes**: 承载地图布局和地形资源，是场景业务的重要输入。
+
+## `work/unpacked/map/1-worldmap0001.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/10-westoutside.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/11-blackcave-1.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/12-blackcave-2.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/13-blackcave-3.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/14-blackcave-4.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/17-wudang_foot.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/18-mingjiao.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/19-wudang.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/2-village.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/20-wudang_hotel.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/22-wudang_room2.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/23-wudang_room3.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/24-emei_foot.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/26-emei.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/28-emei_hotel.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/29-emei_room1.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/3-myhome.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/30-emei_room2.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/33-jaunt_village.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/34-legame.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/37-xueshan.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/38-tianshan_1.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/39-tianshan_2.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/4-weapon_shop.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/40-fotou.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/41-room_6.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/42-two_cave.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/44-foot_road.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/45-taohuadao.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/46-long_foot.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/5-drug_shop.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/53-migong.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/59-fo.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/6-grocery_shop.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/68-mingjiao_cave.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/69-mingjiao_1.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/70-mingjiao_2.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/71-mingjiao_3.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/72-mingjiao_hotel.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/8-outside.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/9-eastoutside.map` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/hall.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/hill.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/hole.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/house.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/jian_3.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/map_fd.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/room.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/snow.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/village_1.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/village_2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/worldmap0001.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/y2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/yaozhui_3.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/yifu_5.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/map/zhuzi.ps` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/music` (directory)
 - **Description**: 音乐资源模块
 - **Agent Notes**: 承载剧情、战斗和地图音乐资源。
 
+## `work/unpacked/music/battle.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/guiyi.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/lose.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/qingkuai.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/waibu.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/win.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/music/world.mid` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/n.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/o.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/p.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/pic` (directory)
 - **Description**: 通用图片资源模块
 - **Agent Notes**: 承载 Logo、箱体、岩石等通用场景图。
+
+## `work/unpacked/pic/Gamezero.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/box1.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/box2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/chuan.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/door.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/game1313.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/lianhelogo.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/m.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/rock.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/rock2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/sms.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/switch.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/yun.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/zhangkong.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/pic/zhuoyu.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/q.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/r.class` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/role` (directory)
 - **Description**: 角色立绘与动画模块
 - **Agent Notes**: 承载人物表现资源，是角色业务表现层输入。
 
+## `work/unpacked/role/10.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/11.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/12.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/13.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/5-jianke.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/6-oldman.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/7-mm.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/chen.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/chenkun.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/chuan1.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/chuan_3.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/cungu.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/dashi.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/daxia.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/didao.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/dong.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/emei_mm.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/fuchen.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/gaga_xia.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/hero1.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/hero2.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/heshang1.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/heshang2.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/jiang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/jianke.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/jianke_tou.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/kulou.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/lao_mm.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/laotou.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/matou.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/miji.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/mjdz.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/mumen.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/role1Bigwalk.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/toumu.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/tree.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/tulong.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/wei.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/weiyxiao.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/wudang_dizi.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/xiaozhao.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/xiaozhao.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/yang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/yangxiao.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/ying.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/yinzi.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/yitian.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/zhangsf.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/role/zhouzhiruo.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/s.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/skill` (directory)
 - **Description**: 技能表现资源模块
 - **Agent Notes**: 承载技能动画和贴图。
+
+## `work/unpacked/skill/1-yeqiou.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/10-beiming.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/11-shizi.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/12-qishang.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/13.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/14.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/15.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/16.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/17.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/18.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/19.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/2-jingxin.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/20.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/21.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/22.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/23.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/24.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/25.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/26.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/27.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/28.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/29.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/3-taiji.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/30.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/31.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/32.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/33.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/34.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/39.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/4-bagua.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/40.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/41.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/42.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/43.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/49.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/5-qiankun.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/51.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/53.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/54.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/56.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/57.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/58.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/59.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/6-jiouyang.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/60.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/61.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/62.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/7-longzhua.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/8-xianglong.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/9-zhemei.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/9.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/battle9.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/enemyattack.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/fl01.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/gong.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/heihu.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/jianshi.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/jinxin.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/jiouyang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/kui01.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/qishang.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/shitian.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/ssyj.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/tx19.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/useitem.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/wuxiang.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skill/zixia.ani` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/skillIcon` (directory)
 - **Description**: 技能图标模块
 - **Agent Notes**: 承载技能系统图标素材。
 
+## `work/unpacked/skillIcon/1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/10.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/11.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/12.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/13.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/2.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/21.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/3.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/4.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/5.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/6.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/7.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/skillIcon/8.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/start` (directory)
 - **Description**: 开场资源模块
 - **Agent Notes**: 承载标题、主角立绘和开场动画资源。
+
+## `work/unpacked/start/beijing.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/beijingzhuan.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/biaoti.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/jian.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/nanzhujue.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/nvzhujue.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/shandian.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/start1.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/start/start2.ani` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `work/unpacked/sys` (directory)
 - **Description**: 系统界面资源模块
 - **Agent Notes**: 承载菜单、状态栏、按钮等系统 UI 资源。
 
+## `work/unpacked/sys/adddel.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/arrow.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/atk.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/blue_number_s.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/backcloud.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/bottomh.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/leftTopC.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/leftbottomC.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/leftv.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/chat/toph.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/close.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/cloudCursor.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/coin.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/equip_icon.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/equip_using.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/exp.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/info_command_lock.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/info_command_menu.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/info_command_select.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/info_params.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/kaishi.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/legame.ani` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/legamelogo.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/logo.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/lv.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/mo.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/RectBG` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/RectBG/Rectl.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/RectBG/Rectltc.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/RectBG/Rectt.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/back.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/elb.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/ell.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/gbc.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/ib.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/ibm.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/il.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/ilbc.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/iltc.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/it.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/itm.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/innerBorder/mv.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/lTriangle.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/money.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/nemuWords.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/nemuWords_1.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/selectBox.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder` (directory)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder/beauty.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder/lbc.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder/lv.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder/simple.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/sysBorder/th.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/weaponBack.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/new/weaponWords.png` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/qi.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/red_number_s.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/return.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/savebar_ok.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/skill_icon.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/sp.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/sword.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/swordred.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/td.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/tick.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/white_number_s.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/xie.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/sys/yd.ps` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/t.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
 ## `work/unpacked/txt` (directory)
 - **Description**: 剧情与配置文本模块
 - **Agent Notes**: 集中承载场景事件、商店、角色、任务等文本业务数据。
+
+## `work/unpacked/txt/about.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/battlepos.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/config.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/door.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/enemy.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/equip.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/item.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/keyset.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/levelup.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/nameInbigMap.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/rock.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene10event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene10role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene11event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene11role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene12event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene12role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene13event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene13role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene14event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene14role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene16event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene16role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene17chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene17event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene17role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene18event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene18role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene19event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene19role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene1event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene1role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene20chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene20event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene20role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene21event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene21role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene22event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene22role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene23event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene23role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene24event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene24role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene25chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene25event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene25role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene26event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene26role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene27event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene27role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene28chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene28event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene28role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene29event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene29role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene2chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene2event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene2role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene30chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene30event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene30role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene31event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene31role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene32event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene32role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene33chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene33event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene33role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene34event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene34role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene35event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene35role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene36event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene36role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene37event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene37role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene38event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene38role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene39event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene39role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene3event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene3role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene40event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene40role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene41event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene41role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene42event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene42role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene43event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene43role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene44event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene44role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene45event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene45role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene46event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene46role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene48event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene48role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene49event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene49role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene4event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene4role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene50event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene50role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene51chat.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene51event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene51role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene52event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene52role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene53event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene53role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene55event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene55role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene56event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene56role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene57event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene57role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene58event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene58role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene59event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene59role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene5event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene5role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene60event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene60role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene61event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene61role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene62event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene62role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene63event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene63role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene64event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene64role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene65event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene65role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene66event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene66role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene67event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene67role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene6event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene6role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene7event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene7role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene8event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene8role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene9event.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/scene9role.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/shop.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill1.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill10.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill11.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill12.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill13.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill14.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill15.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill16.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill17.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill18.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill19.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill2.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill20.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill21.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill22.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill3.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill4.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill5.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill6.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill7.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill8.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/skill9.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/smsItem.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/story.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/switch.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/task.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/team.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/txt/treasurebox.txt` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/u.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/v.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/w.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/x.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/y.class` (file)
+- **Description**: 待补充描述 (Pending description)
+
+## `work/unpacked/z.class` (file)
+- **Description**: 待补充描述 (Pending description)
 
 ## `倚天屠龙之君临天下.jar` (file)
 - **Description**: 原始游戏包

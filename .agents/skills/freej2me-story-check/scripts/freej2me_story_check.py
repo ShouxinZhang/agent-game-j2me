@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -14,6 +15,10 @@ from pathlib import Path
 WINDOW_PATTERN = re.compile(
     r'^\s*(0x[0-9a-f]+)\s+"(.*)"(?:\:\s+\("(.*)"\s+"(.*)"\))?\s+(\d+)x(\d+)\+(-?\d+)\+(-?\d+)'
 )
+ABS_X_PATTERN = re.compile(r"Absolute upper-left X:\s+(-?\d+)")
+ABS_Y_PATTERN = re.compile(r"Absolute upper-left Y:\s+(-?\d+)")
+WIDTH_PATTERN = re.compile(r"Width:\s+(\d+)")
+HEIGHT_PATTERN = re.compile(r"Height:\s+(\d+)")
 
 
 def project_root() -> Path:
@@ -79,6 +84,26 @@ def choose_window(window_id: str | None) -> dict[str, object]:
     return windows[0]
 
 
+def window_geometry(window_id: str) -> dict[str, int]:
+    completed = run(["xwininfo", "-id", window_id])
+    if completed.returncode != 0:
+        raise RuntimeError(completed.stderr.strip() or f"xwininfo failed for {window_id}")
+
+    abs_x_match = ABS_X_PATTERN.search(completed.stdout)
+    abs_y_match = ABS_Y_PATTERN.search(completed.stdout)
+    width_match = WIDTH_PATTERN.search(completed.stdout)
+    height_match = HEIGHT_PATTERN.search(completed.stdout)
+    if not abs_x_match or not abs_y_match or not width_match or not height_match:
+        raise RuntimeError(f"could not parse geometry for {window_id}")
+
+    return {
+        "x": int(abs_x_match.group(1)),
+        "y": int(abs_y_match.group(1)),
+        "width": int(width_match.group(1)),
+        "height": int(height_match.group(1)),
+    }
+
+
 def output_dir(args_output_dir: str | None) -> Path:
     if args_output_dir:
         path = Path(args_output_dir)
@@ -115,11 +140,23 @@ def robot_press(keys: list[str], delay_ms: int) -> None:
         raise RuntimeError(completed.stderr.strip() or completed.stdout.strip() or "robot press failed")
 
 
+def robot_type(text: str, delay_ms: int) -> None:
+    completed = run([java_bin(), str(robot_source()), "type", str(delay_ms), text], cwd=project_root())
+    if completed.returncode != 0:
+        raise RuntimeError(completed.stderr.strip() or completed.stdout.strip() or "robot type failed")
+
+
 def focus_window(window: dict[str, object]) -> None:
-    center_x = int(window["x"]) + int(window["width"]) // 2
-    center_y = int(window["y"]) + int(window["height"]) // 2
+    geometry = window_geometry(str(window["id"]))
+    center_x = geometry["x"] + geometry["width"] // 2
+    center_y = geometry["y"] + geometry["height"] // 2
     robot_click(center_x, center_y)
     time.sleep(0.4)
+
+
+def relative_point(window: dict[str, object], x: int, y: int) -> tuple[int, int]:
+    geometry = window_geometry(str(window["id"]))
+    return geometry["x"] + x, geometry["y"] + y
 
 
 def cmd_list(args: argparse.Namespace) -> int:
@@ -189,6 +226,78 @@ def cmd_walkthrough(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_click(args: argparse.Namespace) -> int:
+    window = choose_window(args.window_id)
+    out_dir = output_dir(args.output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    click_x, click_y = relative_point(window, args.x, args.y)
+    focus_window(window)
+    if args.capture:
+        capture(str(window["id"]), out_dir / "click-00-before.png")
+    robot_click(click_x, click_y)
+    time.sleep(args.wait_after)
+    if args.capture:
+        capture(str(window["id"]), out_dir / "click-01-after.png")
+    manifest = {
+        "window": window,
+        "relative_x": args.x,
+        "relative_y": args.y,
+        "absolute_x": click_x,
+        "absolute_y": click_y,
+        "wait_after": args.wait_after,
+    }
+    (out_dir / "click.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(out_dir)
+    return 0
+
+
+def cmd_burst(args: argparse.Namespace) -> int:
+    window = choose_window(args.window_id)
+    out_dir = output_dir(args.output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    focus_window(window)
+    frames: list[str] = []
+    for index in range(args.frames):
+        path = out_dir / f"burst-{index:02d}.png"
+        capture(str(window["id"]), path)
+        frames.append(path.name)
+        if index < args.frames - 1:
+            time.sleep(args.interval_ms / 1000.0)
+    manifest = {
+        "window": window,
+        "frames": frames,
+        "interval_ms": args.interval_ms,
+    }
+    (out_dir / "burst.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(out_dir)
+    return 0
+
+
+def cmd_type(args: argparse.Namespace) -> int:
+    window = choose_window(args.window_id)
+    out_dir = output_dir(args.output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    focus_window(window)
+    if args.capture:
+        capture(str(window["id"]), out_dir / "type-00-before.png")
+    robot_type(args.text, args.delay_ms)
+    if args.submit:
+        robot_press(["ENTER"], args.delay_ms)
+    time.sleep(args.wait_after)
+    if args.capture:
+        capture(str(window["id"]), out_dir / "type-01-after.png")
+    manifest = {
+        "window": window,
+        "text": args.text,
+        "delay_ms": args.delay_ms,
+        "submit": args.submit,
+        "wait_after": args.wait_after,
+    }
+    (out_dir / "type.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(out_dir)
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Drive FreeJ2ME and capture story progression evidence.")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -208,14 +317,45 @@ def main() -> int:
     parser_walk.add_argument("--delay-ms", type=int, default=500, help="Delay between key presses in milliseconds")
     parser_walk.add_argument("--wait-after", type=float, default=1.0, help="Seconds to wait before each screenshot")
 
+    parser_click = subparsers.add_parser("click", help="Click a relative point inside the FreeJ2ME window")
+    parser_click.add_argument("--window-id", help="Explicit FreeJ2ME window id")
+    parser_click.add_argument("--output-dir", help="Output directory for evidence")
+    parser_click.add_argument("--x", type=int, required=True, help="Relative X inside the window")
+    parser_click.add_argument("--y", type=int, required=True, help="Relative Y inside the window")
+    parser_click.add_argument("--wait-after", type=float, default=1.0, help="Seconds to wait after clicking")
+    parser_click.add_argument("--capture", action="store_true", help="Capture before/after screenshots")
+
+    parser_burst = subparsers.add_parser("burst", help="Capture multiple screenshots in quick succession")
+    parser_burst.add_argument("--window-id", help="Explicit FreeJ2ME window id")
+    parser_burst.add_argument("--output-dir", help="Output directory for evidence")
+    parser_burst.add_argument("--frames", type=int, default=6, help="How many frames to capture")
+    parser_burst.add_argument("--interval-ms", type=int, default=120, help="Delay between frames in milliseconds")
+
+    parser_type = subparsers.add_parser("type", help="Type text into the focused FreeJ2ME window")
+    parser_type.add_argument("--window-id", help="Explicit FreeJ2ME window id")
+    parser_type.add_argument("--output-dir", help="Output directory for evidence")
+    parser_type.add_argument("--text", required=True, help="Text to type")
+    parser_type.add_argument("--delay-ms", type=int, default=120, help="Delay between characters in milliseconds")
+    parser_type.add_argument("--wait-after", type=float, default=1.0, help="Seconds to wait before final screenshot")
+    parser_type.add_argument("--capture", action="store_true", help="Capture before/after screenshots")
+    parser_type.add_argument("--submit", action="store_true", help="Press ENTER after typing")
+
     args = parser.parse_args()
     try:
+        if shutil.which("xwininfo") is None:
+            raise RuntimeError("xwininfo is not installed or not in PATH")
         if args.command == "list":
             return cmd_list(args)
         if args.command == "step":
             return cmd_step(args)
         if args.command == "walkthrough":
             return cmd_walkthrough(args)
+        if args.command == "click":
+            return cmd_click(args)
+        if args.command == "burst":
+            return cmd_burst(args)
+        if args.command == "type":
+            return cmd_type(args)
     except Exception as exc:
         print(str(exc), file=sys.stderr)
         return 1

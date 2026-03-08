@@ -30,9 +30,38 @@ public class X11RobotDriver {
         };
     }
 
+    private static int charKeyCode(char value) {
+        int keyCode = KeyEvent.getExtendedKeyCodeForChar(value);
+        if (keyCode == KeyEvent.VK_UNDEFINED) {
+            throw new IllegalArgumentException("Unsupported character: " + value);
+        }
+        return keyCode;
+    }
+
+    private static boolean needsShift(char value) {
+        return Character.isUpperCase(value) || "~!@#$%^&*()_+{}|:\"<>?".indexOf(value) >= 0;
+    }
+
+    private static void typeChar(Robot robot, char value, int delayMs) {
+        int keyCode = charKeyCode(value);
+        boolean useShift = needsShift(value);
+        if (useShift) {
+            robot.keyPress(KeyEvent.VK_SHIFT);
+            robot.delay(20);
+        }
+        robot.keyPress(keyCode);
+        robot.delay(30);
+        robot.keyRelease(keyCode);
+        if (useShift) {
+            robot.delay(20);
+            robot.keyRelease(KeyEvent.VK_SHIFT);
+        }
+        robot.delay(delayMs);
+    }
+
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
-            throw new IllegalArgumentException("Usage: click <x> <y> | press <delayMs> <key>...");
+            throw new IllegalArgumentException("Usage: click <x> <y> | press <delayMs> <key>... | type <delayMs> <text>");
         }
 
         Robot robot = new Robot();
@@ -56,6 +85,13 @@ public class X11RobotDriver {
                     robot.delay(40);
                     robot.keyRelease(code);
                     robot.delay(delayMs);
+                }
+            }
+            case "type" -> {
+                int delayMs = Integer.parseInt(args[1]);
+                String text = args[2];
+                for (int i = 0; i < text.length(); i++) {
+                    typeChar(robot, text.charAt(i), delayMs);
                 }
             }
             default -> throw new IllegalArgumentException("Unknown action: " + args[0]);

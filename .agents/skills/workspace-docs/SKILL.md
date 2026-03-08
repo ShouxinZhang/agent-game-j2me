@@ -9,7 +9,14 @@ description: '管理和读取工作区目录文档。使用该技能可了解文
 
 ## When to use this skill?
 1. **Exploring the project**: 当你不清楚某个文件的作用，或想在修改前了解注意事项时使用。
-2. **After modifying/creating files**: 当你新建文件或对现有文件做了重要重构后，你 **MUST** 使用该技能更新文档。
+2. **After modifying/creating files**: 当你新建文件或对现有文件做了重要重构后，你 **MUST** 使用该技能更新 SQLite 文档库。
+
+## Source of Truth
+`workspace_docs.db` 是唯一权威数据源。
+
+- 默认只维护 SQLite 文档库，不要求生成 `WORKSPACE_MAP.md`。
+- 只有用户明确要求导出 Markdown 总览时，才执行 `export`。
+- 不要因为常规文件修改而顺手导出 `WORKSPACE_MAP.md`。
 
 ## How to use (Execution)
 所有操作都通过运行 [agent_docs.py](./scripts/agent_docs.py) 脚本完成。
@@ -22,8 +29,8 @@ description: '管理和读取工作区目录文档。使用该技能可了解文
 在创建或修改文件后，记录对应文档信息：
 `python3 .agents/skills/workspace-docs/scripts/agent_docs.py set "src/new_file.py" -d "Short description" -n "Notes for the Agent"`
 
-### 3. Export Global Documentation (Export)
-生成完整的 Markdown 总览（根目录下的 `WORKSPACE_MAP.md`）：
+### 3. Export Global Documentation (Optional, Legacy)
+仅在用户明确要求 Markdown 总览时，才生成根目录下的 `WORKSPACE_MAP.md`：
 `python3 .agents/skills/workspace-docs/scripts/agent_docs.py export`
 
 ### 4. Prune Missing Entries (Prune)
