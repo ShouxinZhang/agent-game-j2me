@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-08T23:55:54.881940",
+  "display": ":1",
+  "window": {
+    "id": "0x800c57",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2612,
+    "y": 20
+  },
+  "image_path": "docs/visual-checks/walkthrough-current/03-03-advance.png"
+}

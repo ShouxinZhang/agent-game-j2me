@@ -1,0 +1,77 @@
+MIDlet-1: 倚天屠龙之君临天下,/icon.png,GameMIDlet
+Create MIDlet
+读取/txt/config.txt
+读取文件/txt/config.txt完成
+mobileType=null
+useStart=true  ---imgType1
+读取/txt/keyset.txt
+读取文件/txt/keyset.txt完成
+读取/pic/m.ps
+读取文件/pic/m.ps完成
+读取/txt/scene.txt
+读取文件/txt/scene.txt完成
+读取/txt/role.txt
+读取文件/txt/role.txt完成
+javax.microedition.rms.RecordStoreNotFoundException: Record Store Doesn't Exist: ./rms/倚天屠龙之君临天下/yitiantulongSms
+	at javax.microedition.rms.RecordStore.<init>(RecordStore.java:91)
+	at javax.microedition.rms.RecordStore.openRecordStore(RecordStore.java:379)
+	at u.b(Unknown Source)
+	at s.c(Unknown Source)
+	at GameMIDlet.<init>(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.recompile.mobile.MIDletLoader.start(MIDletLoader.java:115)
+	at org.recompile.mobile.MobilePlatform.runJar(MobilePlatform.java:174)
+	at org.recompile.freej2me.FreeJ2ME.<init>(FreeJ2ME.java:296)
+	at org.recompile.freej2me.FreeJ2ME.main(FreeJ2ME.java:36)
+Create Canvas:240, 320
+showNotify()
+startApp()
+showNotify()
+读取/txt/story.txt
+读取文件/txt/story.txt完成
+读取/txt/about.txt
+读取文件/txt/about.txt完成
+存档：yitiantulong1,saveInfo
+存档3：yitiantulong1,saveInfo
+RecordStore.enumerateRecords
+loadRmsInfo flag[0]=1
+names[0]=null
+levels[0]=1
+years[0]=1
+months[0]=1
+days[0]=1
+hours[0]=1
+minutes[0]=1
+seconds[0]=1
+loadRmsInfo flag[1]=0
+loadRmsInfo flag[2]=0
+load storeName=yitiantulong1
+RecordStore.enumerateRecords
+读取/txt/skill.txt
+读取文件/txt/skill.txt完成
+读取/txt/role.txt
+读取文件/txt/role.txt完成
+读取/txt/team.txt
+读取文件/txt/team.txt完成
+更新角色1的状态数据
+技能=1
+读取/txt/scene.txt
+读取文件/txt/scene.txt完成
+MATRIX数组，使用16*12=192
+QUEUE数组，使用53*3=159
+读取/txt/scene3role.txt
+读取文件/txt/scene3role.txt完成
+读取/txt/treasurebox.txt
+读取文件/txt/treasurebox.txt完成
+读取/txt/rock.txt
+读取文件/txt/rock.txt完成
+读取/txt/switch.txt
+读取文件/txt/switch.txt完成
+读取/txt/door.txt
+读取文件/txt/door.txt完成
+读取/txt/scene3event.txt
+读取文件/txt/scene3event.txt完成
+正在使用的内存：useMen=664096
+nextScript(0),step=0

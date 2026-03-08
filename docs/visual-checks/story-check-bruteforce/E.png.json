@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-08T14:19:47.337523",
+  "display": ":1",
+  "window": {
+    "id": "0x5400007",
+    "title": "FreeJ2ME",
+    "wm_class": "org-recompile-freej2me-FreeJ2ME",
+    "wm_instance": "org-recompile-freej2me-FreeJ2ME",
+    "width": 2494,
+    "height": 1371,
+    "x": 0,
+    "y": 37
+  },
+  "image_path": "docs/visual-checks/story-check-bruteforce/E.png"
+}

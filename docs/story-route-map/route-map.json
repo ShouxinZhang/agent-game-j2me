@@ -1,0 +1,465 @@
+{
+  "story": {
+    "startStory": "元朝末年，政治腐败，民不聊生，各地群雄争相起义，逐鹿中原。 \n　  当时江湖上传闻有2把神器，拥有者即为武林至尊，能号令天下。武林各大门派为了一统江湖，争霸天下，莫不对这两件宝物垂涎三尺，他们你争我夺，尔虞我诈，从而掀起阵阵腥风血雨，江湖再无宁日。",
+    "end1Story": "江湖路，烟雨间，临风饮雪，也许新的风雨，新的历程正在面前等着你！\n    天涯路漫漫……\n    <--游戏结束-->",
+    "end2Story": "明教势力遍布天下，少侠成功登上了万众瞩目的宝座，成为明教教主，接受各路英雄的膜拜……\n    英雄挟美人指点江山，实乃豪情万丈，不亦乐乎！\n    然而，众多疑问仍然困惑，成昆的去向、小昭神秘身份、朝廷的围剿、井底神秘人、神器的秘密……\n    一切的一切还都是一个谜……\n    江湖路，烟雨间，临风饮雪，也许新的风雨，新的历程正在面前等着你！\n    天涯路漫漫……"
+  },
+  "summary": {
+    "tasks": [
+      {
+        "id": 1,
+        "text": "帮助张松溪寻找草药“龙须草”",
+        "hint": "经过村后野猪岭向左走可达西郊"
+      },
+      {
+        "id": 2,
+        "text": "修炼到一定级别后可上武当寻找张松溪",
+        "hint": "武当山在村庄的右方向"
+      },
+      {
+        "id": 3,
+        "text": "去峨嵋调查中毒事件",
+        "hint": "在村庄的左边方向上峨嵋山"
+      },
+      {
+        "id": 4,
+        "text": "到峨嵋密室寻找传说中的“神器”",
+        "hint": "后山寻找密道可入"
+      },
+      {
+        "id": 5,
+        "text": "携带“倚天”上少林寻找智光大师",
+        "hint": "少林在武当的右边方向"
+      },
+      {
+        "id": 6,
+        "text": "回武当把解药交给张三丰",
+        "hint": ""
+      },
+      {
+        "id": 7,
+        "text": "上雪山寻找3块“千年寒铁”，然后交给智光大师",
+        "hint": "雪山在少林上方积雪区域"
+      },
+      {
+        "id": 8,
+        "text": "前往唐门求取解毒之法",
+        "hint": "唐门在逍遥山庄下方不远处"
+      },
+      {
+        "id": 9,
+        "text": "前往天山寻找10个熊掌，然后回来交给唐峥",
+        "hint": "天山在大地图的西北方向雪域地带"
+      },
+      {
+        "id": 10,
+        "text": "把唐门解药带回武当交给张三丰。",
+        "hint": ""
+      },
+      {
+        "id": 11,
+        "text": "去逍遥山庄观看“扬刀立威大会”",
+        "hint": "逍遥山庄在峨嵋山右边方向不远"
+      },
+      {
+        "id": 12,
+        "text": "寻找“九转还魂丹”，找到后交给殷天正，救回周芷若。",
+        "hint": "去各大药店找找"
+      },
+      {
+        "id": 13,
+        "text": "前往桃花岛暗访明教事件",
+        "hint": "桃花岛需从村庄右边的“佳兴码头”雇船，向东南沿海一带行驶，见有桃花岛屿便是"
+      },
+      {
+        "id": 14,
+        "text": "前往乐游山庄打听消息。",
+        "hint": "原路返回把船停靠在码头，然后到村庄上方的“文明码头”雇船到乐游山庄"
+      },
+      {
+        "id": 15,
+        "text": "找10个高品质的玄晶【品质不小于8】交给晦弘大师可换取“狮子吼神功”秘籍。",
+        "hint": ""
+      },
+      {
+        "id": 16,
+        "text": "前往明教打听消息！",
+        "hint": "明教在村庄正西边方向"
+      },
+      {
+        "id": 17,
+        "text": "前往黑风洞救语嫣。",
+        "hint": "黑风洞在村后山东郊"
+      },
+      {
+        "id": 18,
+        "text": "心情忐忑不安，思念美人，赶紧前往峨嵋寻找周芷若。",
+        "hint": ""
+      }
+    ],
+    "task_changes": [
+      {
+        "scene_id": 11,
+        "scene_name": "西郊洞穴-1",
+        "phase": "phaseAll",
+        "event_id": 1104,
+        "event_name": "救人",
+        "change": "移除任务",
+        "task_id": 17,
+        "task_text": "前往黑风洞救语嫣。",
+        "task_hint": "黑风洞在村后山东郊"
+      },
+      {
+        "scene_id": 20,
+        "scene_name": "大殿",
+        "phase": "phaseAll",
+        "event_id": 2003,
+        "event_name": "中毒",
+        "change": "加入任务",
+        "task_id": 3,
+        "task_text": "去峨嵋调查中毒事件",
+        "task_hint": "在村庄的左边方向上峨嵋山"
+      },
+      {
+        "scene_id": 20,
+        "scene_name": "大殿",
+        "phase": "phaseAll",
+        "event_id": 2004,
+        "event_name": "取药回来",
+        "change": "移除任务",
+        "task_id": 3,
+        "task_text": "去峨嵋调查中毒事件",
+        "task_hint": "在村庄的左边方向上峨嵋山"
+      },
+      {
+        "scene_id": 20,
+        "scene_name": "大殿",
+        "phase": "phaseAll",
+        "event_id": 2004,
+        "event_name": "取药回来",
+        "change": "移除任务",
+        "task_id": 6,
+        "task_text": "回武当把解药交给张三丰",
+        "task_hint": ""
+      },
+      {
+        "scene_id": 23,
+        "scene_name": "密室",
+        "phase": "phaseAll",
+        "event_id": 2304,
+        "event_name": "对话张松溪",
+        "change": "移除任务",
+        "task_id": 2,
+        "task_text": "修炼到一定级别后可上武当寻找张松溪",
+        "task_hint": "武当山在村庄的右方向"
+      },
+      {
+        "scene_id": 24,
+        "scene_name": "峨嵋山脚",
+        "phase": "phaseAll",
+        "event_id": 2403,
+        "event_name": "播放偷听",
+        "change": "加入任务",
+        "task_id": 11,
+        "task_text": "去逍遥山庄观看“扬刀立威大会”",
+        "task_hint": "逍遥山庄在峨嵋山右边方向不远"
+      },
+      {
+        "scene_id": 28,
+        "scene_name": "峨嵋大殿",
+        "phase": "phaseAll",
+        "event_id": 2802,
+        "event_name": "剧情",
+        "change": "加入任务",
+        "task_id": 4,
+        "task_text": "到峨嵋密室寻找传说中的“神器”",
+        "task_hint": "后山寻找密道可入"
+      },
+      {
+        "scene_id": 35,
+        "scene_name": "神仙居",
+        "phase": "phaseAll",
+        "event_id": 3502,
+        "event_name": "话",
+        "change": "移除任务",
+        "task_id": 13,
+        "task_text": "前往桃花岛暗访明教事件",
+        "task_hint": "桃花岛需从村庄右边的“佳兴码头”雇船，向东南沿海一带行驶，见有桃花岛屿便是"
+      },
+      {
+        "scene_id": 35,
+        "scene_name": "神仙居",
+        "phase": "phaseAll",
+        "event_id": 3502,
+        "event_name": "话",
+        "change": "加入任务",
+        "task_id": 14,
+        "task_text": "前往乐游山庄打听消息。",
+        "task_hint": "原路返回把船停靠在码头，然后到村庄上方的“文明码头”雇船到乐游山庄"
+      },
+      {
+        "scene_id": 3,
+        "scene_name": "自己家",
+        "phase": "phase1",
+        "event_id": 302,
+        "event_name": "对话",
+        "change": "加入任务",
+        "task_id": 1,
+        "task_text": "帮助张松溪寻找草药“龙须草”",
+        "task_hint": "经过村后野猪岭向左走可达西郊"
+      },
+      {
+        "scene_id": 3,
+        "scene_name": "自己家",
+        "phase": "phase1",
+        "event_id": 304,
+        "event_name": "对话",
+        "change": "移除任务",
+        "task_id": 1,
+        "task_text": "帮助张松溪寻找草药“龙须草”",
+        "task_hint": "经过村后野猪岭向左走可达西郊"
+      },
+      {
+        "scene_id": 3,
+        "scene_name": "自己家",
+        "phase": "phase2",
+        "event_id": 305,
+        "event_name": "伤愈对话",
+        "change": "加入任务",
+        "task_id": 2,
+        "task_text": "修炼到一定级别后可上武当寻找张松溪",
+        "task_hint": "武当山在村庄的右方向"
+      },
+      {
+        "scene_id": 41,
+        "scene_name": "左下房",
+        "phase": "phaseAll",
+        "event_id": 4102,
+        "event_name": "自动",
+        "change": "移除任务",
+        "task_id": 18,
+        "task_text": "心情忐忑不安，思念美人，赶紧前往峨嵋寻找周芷若。",
+        "task_hint": ""
+      },
+      {
+        "scene_id": 48,
+        "scene_name": "逍遥迷宫",
+        "phase": "phase2",
+        "event_id": 4803,
+        "event_name": "出现",
+        "change": "移除任务",
+        "task_id": 11,
+        "task_text": "去逍遥山庄观看“扬刀立威大会”",
+        "task_hint": "逍遥山庄在峨嵋山右边方向不远"
+      },
+      {
+        "scene_id": 48,
+        "scene_name": "逍遥迷宫",
+        "phase": "phase2",
+        "event_id": 4803,
+        "event_name": "出现",
+        "change": "加入任务",
+        "task_id": 12,
+        "task_text": "寻找“九转还魂丹”，找到后交给殷天正，救回周芷若。",
+        "task_hint": "去各大药店找找"
+      },
+      {
+        "scene_id": 51,
+        "scene_name": "唐门",
+        "phase": "phaseAll",
+        "event_id": 5102,
+        "event_name": "对话",
+        "change": "移除任务",
+        "task_id": 8,
+        "task_text": "前往唐门求取解毒之法",
+        "task_hint": "唐门在逍遥山庄下方不远处"
+      },
+      {
+        "scene_id": 51,
+        "scene_name": "唐门",
+        "phase": "phaseAll",
+        "event_id": 5102,
+        "event_name": "对话",
+        "change": "加入任务",
+        "task_id": 9,
+        "task_text": "前往天山寻找10个熊掌，然后回来交给唐峥",
+        "task_hint": "天山在大地图的西北方向雪域地带"
+      }
+    ],
+    "endings": [
+      {
+        "scene_id": 30,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 3030,
+        "event_name": "结局",
+        "ending_arg": [
+          "2"
+        ]
+      }
+    ],
+    "final_chain": [
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": null,
+        "event_name": "回",
+        "kind": "换场景",
+        "args": [
+          "30",
+          "2"
+        ]
+      },
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": null,
+        "event_name": "",
+        "kind": "换场景",
+        "args": [
+          "56",
+          "1"
+        ]
+      },
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 6805,
+        "event_name": "结局战",
+        "kind": "战斗",
+        "args": [
+          "15",
+          "15",
+          "15"
+        ]
+      },
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 6805,
+        "event_name": "结局战",
+        "kind": "战斗",
+        "args": [
+          "23"
+        ]
+      },
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 6805,
+        "event_name": "结局战",
+        "kind": "战斗",
+        "args": [
+          "25"
+        ]
+      },
+      {
+        "scene_id": 55,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 6805,
+        "event_name": "结局战",
+        "kind": "换场景",
+        "args": [
+          "30",
+          "3"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": null,
+        "event_name": "内室",
+        "kind": "换场景",
+        "args": [
+          "57",
+          "3"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": 7102,
+        "event_name": "播放",
+        "kind": "战斗",
+        "args": [
+          "24"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": 7103,
+        "event_name": "自动",
+        "kind": "更新阶段",
+        "args": [
+          "2"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phaseAll",
+        "event_id": 7103,
+        "event_name": "自动",
+        "kind": "换场景",
+        "args": [
+          "58",
+          "2"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 7105,
+        "event_name": "自动",
+        "kind": "提示信息",
+        "args": [
+          "书信：…我自知命不久已…后来有缘者，可取圣火令，习乾坤大挪移神功，即为可传本教教主之位！--阳顶天"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 7105,
+        "event_name": "自动",
+        "kind": "获取技能",
+        "args": [
+          "4"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 7105,
+        "event_name": "自动",
+        "kind": "提示信息",
+        "args": [
+          "习得技能“乾坤大挪移”"
+        ]
+      },
+      {
+        "scene_id": 58,
+        "scene_name": "明教",
+        "phase": "phase2",
+        "event_id": 7106,
+        "event_name": "自动",
+        "kind": "提示信息",
+        "args": [
+          "使用“乾坤大挪移神功”打通出口！"
+        ]
+      }
+    ]
+  }
+}

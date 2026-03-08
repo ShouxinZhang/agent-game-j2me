@@ -26,6 +26,10 @@ description: '管理和读取工作区目录文档。使用该技能可了解文
 生成完整的 Markdown 总览（根目录下的 `WORKSPACE_MAP.md`）：
 `python3 .agents/skills/workspace-docs/scripts/agent_docs.py export`
 
-### 4. Scan Workspace (Scan)
+### 4. Prune Missing Entries (Prune)
+当数据库中保留了已经不存在的历史路径时，先按当前文件系统清理：
+`python3 .agents/skills/workspace-docs/scripts/agent_docs.py prune-missing`
+
+### 5. Scan Workspace (Scan)
 扫描工作区中未文档化的文件，并将其加入数据库：
 `python3 .agents/skills/workspace-docs/scripts/agent_docs.py scan`

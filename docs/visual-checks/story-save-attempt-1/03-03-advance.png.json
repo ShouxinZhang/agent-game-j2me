@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-08T14:33:15.873850",
+  "display": ":1",
+  "window": {
+    "id": "0x800a0f",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2612,
+    "y": 20
+  },
+  "image_path": "docs/visual-checks/story-save-attempt-1/03-03-advance.png"
+}

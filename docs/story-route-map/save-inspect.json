@@ -1,0 +1,27 @@
+{
+  "slot": "/home/wudizhe001/Documents/GitHub/agent-game-j2me/rms/倚天屠龙之君临天下/yitiantulong1",
+  "payload_length": 280,
+  "phase": 2,
+  "scene": 30,
+  "play_music": 1,
+  "completed_events": [
+    801,
+    801,
+    301,
+    302,
+    6805
+  ],
+  "role_tails": [
+    {
+      "x": 160,
+      "y": 60,
+      "dir": 3,
+      "state": 1,
+      "extra": 0
+    }
+  ],
+  "live_back_scene": 30,
+  "live_back_pos": 2,
+  "flag": false,
+  "name": "王奕枫"
+}

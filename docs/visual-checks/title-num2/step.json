@@ -1,0 +1,17 @@
+{
+  "window": {
+    "id": "0x800a3a",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2612,
+    "y": 20
+  },
+  "keys": [
+    "2"
+  ],
+  "delay_ms": 700,
+  "wait_after": 1.0
+}

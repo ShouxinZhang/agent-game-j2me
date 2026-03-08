@@ -5,6 +5,8 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DEFAULT_GAME_JAR="$ROOT_DIR/倚天屠龙之君临天下.jar"
 EMULATOR_JAR="${FREEJ2ME_JAR:-$ROOT_DIR/tools/freej2me.jar}"
 GAME_JAR="${1:-$DEFAULT_GAME_JAR}"
+LOCAL_JAVA_BIN="$ROOT_DIR/tools/jdk-21/bin/java"
+JAVA_BIN="${JAVA_BIN:-$LOCAL_JAVA_BIN}"
 
 if [[ ! -f "$EMULATOR_JAR" ]]; then
   printf 'FreeJ2ME jar not found: %s\n' "$EMULATOR_JAR" >&2
@@ -18,4 +20,11 @@ if [[ ! -f "$GAME_JAR" ]]; then
   exit 1
 fi
 
-exec java -jar "$EMULATOR_JAR" "$GAME_JAR"
+if [[ ! -x "$JAVA_BIN" ]]; then
+  JAVA_BIN="java"
+fi
+
+GAME_JAR_ABS="$(cd "$(dirname "$GAME_JAR")" && pwd)/$(basename "$GAME_JAR")"
+GAME_JAR_URI="file://$GAME_JAR_ABS"
+
+exec "$JAVA_BIN" -jar "$EMULATOR_JAR" "$GAME_JAR_URI"

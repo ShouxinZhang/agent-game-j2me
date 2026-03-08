@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-03-08T15:12:33.605247",
+  "display": ":1",
+  "window": {
+    "id": "0x800a44",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2612,
+    "y": 20
+  },
+  "image_path": "docs/visual-checks/load-key-w/step-00-before.png"
+}

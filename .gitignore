@@ -1,0 +1,22 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local runtime outputs
+work/
+rms/
+
+# Local emulator and JDK downloads
+tools/freej2me.jar
+tools/jdk-21/
+tools/jdk-download/

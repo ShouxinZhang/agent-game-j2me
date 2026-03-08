@@ -1,0 +1,63 @@
+{
+  "window": {
+    "id": "0x800a0f",
+    "title": "FreeJ2ME",
+    "wm_class": "mutter-x11-frames",
+    "wm_instance": "mutter-x11-frames",
+    "width": 268,
+    "height": 386,
+    "x": 2612,
+    "y": 20
+  },
+  "sequence": [
+    [
+      "00-title",
+      []
+    ],
+    [
+      "01-enter-start",
+      [
+        "ENTER"
+      ]
+    ],
+    [
+      "02-confirm",
+      [
+        "ENTER"
+      ]
+    ],
+    [
+      "03-advance",
+      [
+        "ENTER"
+      ]
+    ],
+    [
+      "04-advance",
+      [
+        "ENTER"
+      ]
+    ],
+    [
+      "05-down-enter",
+      [
+        "DOWN",
+        "ENTER"
+      ]
+    ],
+    [
+      "06-advance",
+      [
+        "ENTER"
+      ]
+    ],
+    [
+      "07-advance",
+      [
+        "ENTER"
+      ]
+    ]
+  ],
+  "delay_ms": 500,
+  "wait_after": 1.0
+}
