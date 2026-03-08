@@ -15,6 +15,7 @@ __pycache__/
 # Local runtime outputs
 work/
 rms/
+.agent_cache/
 
 # Local emulator and JDK downloads
 tools/freej2me.jar
